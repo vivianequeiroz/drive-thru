@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+
 int mostraOpcoesDePagamento(){
     return 0;
 }
@@ -29,21 +30,33 @@ return 0;
 }
 
 int selecionaLanche()  {
-    int codigoDoLanche;
+    
+    int codigoDoLanche, quantidadeDoLanche;
 
-    printf("Os códigos das opções de lache são: \n");
-    printf("[1] - Pão de batata \n");
-    printf("[2] - Hot dog vegetariano \n");
-    printf("[3] - Coxinha de jaca \n");
-    printf("[4] - Pastel de brócolis com queijo \n");
-    printf("[5] - Pizza de 4 queijos \n");
+    printf("Os códigos das opções de lache são: \n\n");
+    printf("[1] - Pão de batata \n\n");
+    printf("[2] - Hot dog vegetariano \n\n");
+    printf("[3] - Coxinha de jaca \n\n");
+    printf("[4] - Pastel de brócolis com queijo \n\n");
+    printf("[5] - Pizza de 4 queijos \n\n");
     printf("Digite um dos códigos: ");
     scanf("%i", &codigoDoLanche);
+    
+    printf("Digite a quantidade desejada: ");
+    scanf("%i", &quantidadeDoLanche);
 
-    return codigoDoLanche;
+    return codigoDoLanche, quantidadeDoLanche;
 }
 
+
+
+
+
+
 int main(void) {
+
+  setlocale(LC_ALL, "Portuguese");
+
   int number;
 
 
