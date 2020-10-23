@@ -47,10 +47,10 @@ int main(void) {
   int number;
 
 
-  printf("Digite uma das opções entre [ ] \n");
-  printf("Para ver o cardapio dia digite: [1] \n");
-  printf("Para conferir as opções de pagamento digite: [2] \n");
-  printf("Para conferir a oferta do dia digite: [3] \n");
+  printf("Digite uma das opções entre [ ] \n\n");
+  printf("Para ver o cardapio dia digite: [1] \n\n");
+  printf("Para conferir as opções de pagamento digite: [2] \n\n");
+  printf("Para conferir a oferta do dia digite: [3] \n\n ");
   printf("Digite uma das opções: ");
   scanf("%i", &number);
 
