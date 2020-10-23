@@ -1,17 +1,23 @@
-#include <stdio.h> 
-#include <stdlib.h> 
-#include <locale.h> 
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+int mostraOpcoesDePagamento(){
+    return 0;
+}
 
-int selecionaMenu(number) {  
+int mostraOfertas(){
+    return 0;
+}
+int selecionaMenu(number) {
 
  switch(number){
-    case 1: 
+    case 1:
       selecionaLanche();
       break;
-    case 2: 
+    case 2:
       mostraOpcoesDePagamento();
       break;
-    case 3: 
+    case 3:
       mostraOfertas();
       break;
     default:
@@ -40,7 +46,7 @@ int selecionaLanche()  {
 int main(void) {
   int number;
 
- 
+
   printf("Digite uma das opções entre [ ] \n");
   printf("Para ver o cardapio dia digite: [1] \n");
   printf("Para conferir as opções de pagamento digite: [2] \n");
