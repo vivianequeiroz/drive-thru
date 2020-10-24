@@ -29,6 +29,8 @@ int selecionaMenu(number) {
 return 0;
 }
 
+
+
 int selecionaLanche()  {
     
     int codigoDoLanche, quantidadeDoLanche;
