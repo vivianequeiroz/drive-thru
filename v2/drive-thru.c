@@ -146,7 +146,7 @@ int vendas() {
 
       int capturarCartao() {
 
-        int tamanhoString(char string[]);
+        int tamanhoString(char *string[]);
         char stringCartao[16];
 
         printf("Digite aqui o número do cartão sem caracteres especiais e sem espaços: \n");
@@ -158,7 +158,7 @@ int vendas() {
         return 0;
       }
 
-      int tamanhoString(char string[]) {
+      int tamanhoString(char *string[]) {
 
         int numCaracteres = 0; 
 
