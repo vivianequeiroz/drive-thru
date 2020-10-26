@@ -1,17 +1,63 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <locale.h>
+#define DATA_SIZE 1000
 
-
-int main(void) {
-
-  setlocale(LC_ALL, "Portuguese");
+// MÓDULO DE VENDAS
+int vendas() {
 
     int codProd;
     int quantidade;
     float custoTotal_1, custoTotal_2, custoTotal_3, custoTotal_4, custoTotal_5;
 
-    printf("Selecione o código do produto escolhido pelo cliente -- checar PRODUTOS.DAT se necessário: %i \n\n", codProd);
+      // DATABASE VENDAS
+
+      /* Variable to store user content */
+      char data[DATA_SIZE];
+
+      /* File pointer to hold reference to our file */
+      FILE * fPtr_vendas;
+
+      /* 
+      * Open file in w (read) mode. 
+      * "data/file1.txt" is complete path to create file
+      */
+      fPtr_vendas = fopen("produtos.txt", "r");
+    
+
+      /* fopen() return NULL if last operation was unsuccessful */
+      if(fPtr_vendas == NULL)
+      {
+          /* File not created hence exit */
+          printf("Erro ao acessar base de dados.\n");
+          exit(EXIT_FAILURE);
+      }
+
+
+      struct produtos {
+          int códigoProduto;
+          char nomeProduto[200];
+          float custoProduto;
+      };
+
+      struct produtos baseDeDados[5] = 
+      {{1, "Pão de batata", 6.0}, {2, "Hot dog vegetariano", 9.5},
+      {3, "Coxinha de jaca", 3.0}, {4, "Pastel de brócolis com queijo", 6.0},
+      {5, "Pizza de quatro queijos", 12.5}};
+
+      fprintf("Código do produto: %i -- Nome: %s -- custo do produto: R$ %f \n", baseDeDados[0].códigoProduto,
+                                                                                 baseDeDados[0].nomeProduto,
+                                                                                 baseDeDados[0].custoProduto);
+                                                                                              
+
+      /* Close file to save file data */
+      fclose(fPtr_vendas);
+
+      // FIM DATABASE VENDAS
+
+   
+
+    printf("Selecione o código do produto escolhido pelo cliente -- checar PRODUTOS.DAT se necessário: %i \n\n");
     scanf("%i", &codProd);
 
     printf("Digite a quantidade escolhida pelo cliente: %i"); 
@@ -49,3 +95,5 @@ int main(void) {
       default:
       break;
     }
+}
+  // FIM MÓDULO VENDAS
