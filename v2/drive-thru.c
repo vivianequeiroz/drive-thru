@@ -6,14 +6,16 @@
 // MÓDULO DE VENDAS
 int vendas() {
 
+    setlocale(LC_ALL, "Portuguese");
+
     int codProd;
     int quantidade;
     float custoTotal_1, custoTotal_2, custoTotal_3, custoTotal_4, custoTotal_5;
 
-    printf("Selecione o código do produto escolhido pelo cliente -- checar PRODUTOS.DAT se necessário: %i \n\n");
+    printf("Selecione o código do produto escolhido pelo cliente -- checar PRODUTOS.DAT se necessário:  \n\n");
     scanf("%i", &codProd);
 
-    printf("Digite a quantidade escolhida pelo cliente: %i"); 
+    printf("Digite a quantidade escolhida pelo cliente: \n\n"); 
     scanf("%i", &quantidade);
 
     custoTotal_1 = 6 * quantidade;
@@ -75,7 +77,7 @@ int vendas() {
 
 
       struct produtos {
-          int códigoProduto;
+          int cddigoProduto;
           char nomeProduto[200];
           float custoProduto;
       };
@@ -108,20 +110,21 @@ int vendas() {
 
   // MÓDULO PAGUE - Parte 1
   int pague(){ 
+      setlocale(LC_ALL, "Portuguese");
 
       char pagamento;
       int dinheiro, cartaoCredito_Debito, cheque;
       int lerCartao; 
       float valorPedido;
 
-      printf("Informe o método de pagamento -- digite: 1 para dinheiro, 2 para chequeo e 3 para cartão de crédito/cartão de débito -- : %c");
+      printf("Informe o método de pagamento -- digite: 1 para dinheiro, 2 para chequeo e 3 para cartão de crédito/cartão de débito -- : \n");
       scanf("%c", &pagamento);
 
-      int dinheiro = 1;
-      int cartaoCredito_Debito = 2; 
-      int cheque = 3; 
+      dinheiro = 1;
+      cartaoCredito_Debito = 2; 
+      cheque = 3; 
 
-      printf("Informe aqui o valor total calculado anteriormente: %f \n");
+      printf("Informe aqui o valor total calculado anteriormente:  \n");
       scanf("%f", &valorPedido);
 
       switch (pagamento) {
@@ -145,11 +148,12 @@ int vendas() {
   // MÓDULO PAGUE - PARTE 2
 
       int capturarCartao() {
+        setlocale(LC_ALL, "Portuguese");
 
         int tamanhoString(char *string[]);
         char stringCartao[16];
 
-        printf("Digite aqui o número do cartão sem caracteres especiais e sem espaços: \n");
+        printf("Digite aqui o número do cartão sem caracteres especiais e sem espaços: ");
         scanf("%s, stringCartao"); 
 
         int num = tamanhoString(stringCartao);
@@ -230,4 +234,5 @@ int vendas() {
       vendas(); 
       pague();
       capturarCartao();
+  
     }
